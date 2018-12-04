@@ -144,9 +144,9 @@ $(window).on("resize", function () {
 				attributionControl: false
 			}).setView([45.411171, -75.6981201], 6);
 
-            L.tileLayer('https://mapwarper.net/maps/tile/36030/{z}/{x}/{y}.png', {
+           L.tileLayer('https://a.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 				maxZoom: 18,
-		    		id: 'matrix-msu.n75kekea',
+				id: 'matrix-msu.n75kekea',
 				accessToken: 'pk.eyJ1IjoibWF0cml4LW1zdSIsImEiOiJmU1NPbUFjIn0.MWCWCMSJ8Ar-6KZtNPzy4w'
 			}).addTo(map);
 			L.control.attribution().setPrefix(
@@ -154,6 +154,12 @@ $(window).on("resize", function () {
 			).addAttribution(
 				'Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a> contributors | <a target="_blank" href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> | Imagery © <a target="_blank" href="http://mapbox.com">Mapbox</a>'
 			).addTo(map);
+	L.tileLayer('https://mapwarper.net/maps/tile/36030/{z}/{x}/{y}.png',
+    {
+      attribution: 'Tiles by <a href="http://mapwarper.net/maps/20531">Map Warper user sarahsimpkin</a>',
+      maxZoom: 20,
+      minZoom: 1
+    }).addTo(map);
 
             //enter path for .csv here
             omnivore.csv('sites-popup.csv')
