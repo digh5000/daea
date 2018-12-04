@@ -142,15 +142,16 @@ $(window).on("resize", function () {
 
             var map = L.map('map', {
 				attributionControl: false
-			}).setView([45.411171, -75.6981201], 6);
-
+			}).setView([45.411171, -75.6981201], 18);
+<!-- have a base layer -->
              L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
     			{
      			 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
       			maxZoom: 20,
      			 minZoom: 1
    			 }).addTo(map);
-	    L.tileLayer('https://mapwarper.net/maps/tile/36030/{z}/{x}/{y}.png',
+<!-- add some more layers -->
+	L.tileLayer('https://mapwarper.net/maps/tile/36030/{z}/{x}/{y}.png',
     			{
 			      attribution: 'Tiles by <a href="http://mapwarper.net/maps/20531">Map Warper user sarahsimpkin</a>',
 			      maxZoom: 20,
