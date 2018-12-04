@@ -144,7 +144,7 @@ $(window).on("resize", function () {
 				attributionControl: false
 			}).setView([45.411171, -75.6981201], 6);
 
-            L.tileLayer('https://mapwarper.net/maps/tile/36030/{z}/{x}/{y}.png, {
+            L.tileLayer('https://mapwarper.net/maps/tile/36030/{z}/{x}/{y}.png', {
 				maxZoom: 18
 			}).addTo(map);
 			L.control.attribution().setPrefix(
