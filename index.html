@@ -144,14 +144,18 @@ $(window).on("resize", function () {
 				attributionControl: false
 			}).setView([45.411171, -75.6981201], 6);
 
-            L.tileLayer('https://mapwarper.net/maps/tile/36030/{z}/{x}/{y}.png, {
-				maxZoom: 18
-			}).addTo(map);
-			L.control.attribution().setPrefix(
-				'<a alt="A JS library for interactive maps" href="http://leafletjs.com" target="_blank">Leaflet</a>'
-			).addAttribution(
-				'Map data &copy; <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a> contributors | <a target="_blank" href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> | Imagery © <a target="_blank" href="http://mapbox.com">Mapbox</a>'
-			).addTo(map);
+             L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+    			{
+     			 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+      			maxZoom: 20,
+     			 minZoom: 1
+   			 }).addTo(map);
+	    L.tileLayer('https://mapwarper.net/maps/tile/36030/{z}/{x}/{y}.png',
+    			{
+			      attribution: 'Tiles by <a href="http://mapwarper.net/maps/20531">Map Warper user sarahsimpkin</a>',
+			      maxZoom: 20,
+			      minZoom: 1
+			    }).addTo(map);
 
             //enter path for .csv here
             omnivore.csv('sites-popup.csv')
